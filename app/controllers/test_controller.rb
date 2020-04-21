@@ -4,10 +4,11 @@ class TestController < ApplicationController
     end
 
     def new
+        @test = Test.new
     end
 
     def show
-        p @test = Test.find(params[:id])
+        @test = Test.find(params[:id])
     end
 
     def create
@@ -18,6 +19,10 @@ class TestController < ApplicationController
         else
             render 'new'
         end
+    end
+
+    def edit
+        @test = Test.find(params[:id])
     end
 
     private

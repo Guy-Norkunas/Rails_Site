@@ -1,4 +1,6 @@
-<%= form_with scope: :test, url: test_index_path,local: true do |form| %>
+<h1>hi there</h1>
+
+<%= form_with(model: @test, local: true) do |form| %>
 
     <% if @test.errors.any? %>
     <div id="error_explanation">
@@ -27,5 +29,3 @@
         <%= form.submit %>
     </p>
 <% end %>
- 
-<%= link_to 'Back', test_index_path %>
