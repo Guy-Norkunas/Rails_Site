@@ -1,0 +1,13 @@
+<h1>hello world!</h1>
+
+<h1>Hello, Rails!</h1>
+<%= link_to 'My Blog', controller: 'test' %>
+
+<%= link_to 'New article', new_test_path %>
+
+
+
+<%= @test.each do |item|%>
+    <p>title: <%= item.title %> text: <%= item.text %></p>
+    <p><%= link_to 'Show', test_path(item) %></p>
+<% end %>

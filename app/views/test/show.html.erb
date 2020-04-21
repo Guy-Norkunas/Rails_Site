@@ -1,0 +1,14 @@
+
+<h1>Hello, Rails!</h1>
+<%= link_to 'My Blog', controller: 'test' %>
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @test.text %>
+</p>
+
+<%= link_to 'Back', test_index_path %>
