@@ -36,6 +36,14 @@ class TestController < ApplicationController
     end
 
 
+    def destroy
+        @test = Test.find(params[:id])
+        @test.destroy
+    
+        redirect_to test_index_path
+    end
+
+
     private
         def test_params
             params.require(:test).permit(:title, :text)
