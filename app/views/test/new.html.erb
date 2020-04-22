@@ -1,3 +1,4 @@
+<%= render 'form' %>
 <%= form_with scope: :test, url: test_index_path,local: true do |form| %>
 
     <% if @test.errors.any? %>
