@@ -11,6 +11,36 @@
   <%= @test.text %>
 </p>
 
+<h2>Comments</h2>
+<%= render @test.comments %>
+
+<% @test.test2.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.name %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @test, @test.test2.build ], local: true, url: test_test2_index_url(@test)) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_test_path %>
 
 <%= link_to 'Back', test_index_path %>
