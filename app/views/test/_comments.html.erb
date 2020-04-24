@@ -1,9 +1,20 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.name %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+<% @test.test2.each do |aha| %>
+
+    <p>
+        <strong>Commenter:</strong>
+        <%= aha.name %>
+    </p>
+    
+    <p>
+        <strong>Comment:</strong>
+        <%= aha.body %>
+    </p>
+
+
+    <p>
+        <%= link_to 'Destroy Comment', [aha.test, aha],
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+    </p>
+
+<% end %>

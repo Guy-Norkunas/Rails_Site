@@ -13,7 +13,9 @@
 
 <h2>Comments</h2>
 
-<% @test.test2.each do |comment| %>
+<%= render partial: 'comments' %>
+
+<!-- <% @test.test2.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
     <%= comment.name %>
@@ -23,7 +25,7 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+<% end %> -->
 
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @test, @test.test2.build ], local: true, url: test_test2_index_url(@test)) do |form| %>
