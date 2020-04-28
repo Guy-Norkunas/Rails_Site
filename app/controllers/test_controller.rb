@@ -1,5 +1,6 @@
 class TestController < ApplicationController
 
+    
     http_basic_authenticate_with name: "guy", password: "pass", except: [:index, :show]
 
     def index

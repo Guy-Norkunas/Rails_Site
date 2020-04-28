@@ -1,5 +1,6 @@
 class Test2Controller < ApplicationController
 
+    before_action :authenticate_user!
     http_basic_authenticate_with name: "guy", password: "pass", only: :destroy
 
     def create
